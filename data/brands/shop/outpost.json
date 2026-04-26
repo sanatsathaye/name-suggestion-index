@@ -71,11 +71,13 @@
     },
     {
       "displayName": "Ozon",
-      "id": "ozon-f8825b",
+      "id": "ozon-e8ee33",
       "locationSet": {
         "include": [
           "am",
+          "az",
           "by",
+          "ge",
           "kg",
           "kz",
           "ru",
@@ -119,10 +121,12 @@
     },
     {
       "displayName": "Wildberries",
-      "id": "wildberries-a6cd69",
+      "id": "wildberries-c79976",
       "locationSet": {
         "include": [
+          "am",
           "by",
+          "ge",
           "kg",
           "kz",
           "ru",
@@ -135,9 +139,11 @@
       "tags": {
         "brand": "Wildberries",
         "brand:en": "Wildberries",
+        "brand:ka": "ვაილდბერიზი",
         "brand:wikidata": "Q24933714",
         "name": "Wildberries",
         "name:en": "Wildberries",
+        "name:ka": "ვაილდბერიზი",
         "shop": "outpost"
       }
     },

@@ -22,7 +22,7 @@ _Breaking changes, which may affect downstream projects, are marked with a_ ⚠�
   * Consumers who call `matcher.buildLocationIndex(data, loco)` should now pass in their own configured `LocationConflation` instance so indexing and lookups share the same cache
   * This eliminates the need for downstream apps (e.g. Rapid) to monkey-patch the matcher to use a shared `LocationConflation` cache!
   * Removed the `which-polygon` dependency — location lookups are now handled inside `LocationConflation` v3.
-  * Note that the `loco` param is optional — if omitted, the `Matcher` can create it's own local `LocationConflation` resolver.
+  * Note that the `loco` param is optional — if omitted, the `Matcher` can create its own local `LocationConflation` resolver.
 * New: Preset generating functions are now exported from `name-suggestion-index` as pure, in-memory functions
   * `buildIDPresets(data: NsiData, opts: BuildIDPresetsOptions): BuildIDPresetsResult` - Generates iD presets JSON
   * `buildJOSMPresets(data: NsiData, opts: BuildJOSMPresetsOptions): XMLBuilder` - Generated JOSM presets XML

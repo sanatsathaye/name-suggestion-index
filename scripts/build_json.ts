@@ -781,7 +781,7 @@ function checkItems(t: NsiTree) {
   const warnFormatWikidata: Array<[string, string]> = [];
   const warnMissingTag: Array<[string, string]> = [];
   const warnFormatTag: Array<[string, string]> = [];
-//  const seenName = {};
+  // const seenName = {};
 
   let total = 0;      // total items
   let totalWd = 0;    // total items with wikidata
@@ -867,36 +867,42 @@ function checkItems(t: NsiTree) {
         }
       });
 
-
-// TODO ?
-  //     // Warn about "new" (no wikidata) items that may duplicate an "existing" (has wikidata) item.
-  //     // The criteria for this warning is:
-  //     // - One of the items has no `brand:wikidata`
-  //     // - The items have nearly the same name
-  //     // - The items have the same locationSet (or the one without wikidata is worldwide)
-  //     const name = tags.name || tags.brand;
-  //     const stem = stemmer(name) || name;
-  //     const itemwd = tags[tree.mainTag];
-  //     const itemls = _loco.validateLocationSet(item.locationSet).id;
-
-  //     if (!seenName[stem]) seenName[stem] = new Set();
-  //     seenName[stem].add(item);
-
-  //     if (seenName[stem].size > 1) {
-  //       seenName[stem].forEach(other => {
-  //         if (other.id === item.id) return;   // skip self
-  //         const otherwd = other.tags[tree.mainTag];
-  //         const otherls = _loco.validateLocationSet(other.locationSet).id;
-
-  //         // pick one of the items without a wikidata tag to be the "duplicate"
-  //         if (!itemwd && (itemls === otherls || itemls === '+[Q2]')) {
-  //           warnDuplicate.push([display(item), display(other)]);
-  //         } else if (!otherwd && (otherls === itemls || otherls === '+[Q2]')) {
-  //           warnDuplicate.push([display(other), display(item)]);
-  //         }
-  //       });
-  //     }
-
+//      // This was a good idea a while ago, but I'm not sure whether it makes sense any more.
+//      // It raises a lot of false positives and our contributors do a pretty good job of noticing
+//      // when new items duplicate existing items.
+//      // We don't currently use the stemmer anywhere else, and maybe we could get rid of it,
+//      // it's not very sophisitcated and probably better alternatives exist.
+//      // (The point of this code is, for example, if a new item appears named "Home Depot",
+//      //  it would warn that we already have an item called "The Home Depot")
+//      if (!item.fromTemplate) {
+//        // Warn about "new" (no wikidata) items that may duplicate an "existing" (has wikidata) item.
+//        // The criteria for this warning is:
+//        // - One of the items has no `brand:wikidata`
+//        // - The items have nearly the same name
+//        // - The items have the same locationSet (or the one without wikidata is worldwide)
+//        const name = tags.name || tags.brand;
+//        const stem = stemmer(name) || name;
+//        const itemwd = tags[tree.mainTag];
+//        const itemls = _loco.validateLocationSet(item.locationSet).id;
+//
+//        if (!seenName[stem]) seenName[stem] = new Set();
+//        seenName[stem].add(item);
+//
+//        if (seenName[stem].size > 1) {
+//          seenName[stem].forEach(other => {
+//            if (other.id === item.id) return;   // skip self
+//            const otherwd = other.tags[tree.mainTag];
+//            const otherls = _loco.validateLocationSet(other.locationSet).id;
+//
+//            // pick one of the items without a wikidata tag to be the "duplicate"
+//            if (!itemwd && (itemls === otherls || itemls === '+[Q2]')) {
+//              warnDuplicate.push([display(item), display(other)]);
+//            } else if (!otherwd && (otherls === itemls || otherls === '+[Q2]')) {
+//              warnDuplicate.push([display(other), display(item)]);
+//            }
+//          });
+//        }
+//      }
     });
   });
 

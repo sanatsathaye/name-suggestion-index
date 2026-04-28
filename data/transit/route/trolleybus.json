@@ -141,15 +141,6 @@
       }
     },
     {
-      "displayName": "IDS ZID",
-      "id": "idszid-97f884",
-      "locationSet": {"include": ["001"]},
-      "tags": {
-        "network": "IDS ZID",
-        "route": "trolleybus"
-      }
-    },
-    {
       "displayName": "Kaluga City Trolley Bus",
       "id": "kalugacitytrolleybus-ea4a14",
       "locationSet": {"include": ["ru"]},
@@ -760,6 +751,7 @@
       "locationSet": {
         "include": ["cz-72.geojson"]
       },
+      "matchNames": ["ids zid"],
       "tags": {
         "network": "Zlínská integrovaná doprava",
         "network:short": "ZID",

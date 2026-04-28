@@ -7929,15 +7929,6 @@
       }
     },
     {
-      "displayName": "IDS ZID",
-      "id": "idszid-a45453",
-      "locationSet": {"include": ["001"]},
-      "tags": {
-        "network": "IDS ZID",
-        "route": "bus"
-      }
-    },
-    {
       "displayName": "IDSOK",
       "id": "integrovanydopravnisystemolomouckehokraje-655c18",
       "locationSet": {
@@ -20613,6 +20604,7 @@
       "locationSet": {
         "include": ["pt-15.geojson"]
       },
+      "matchNames": ["ids zid"],
       "tags": {
         "network": "Transportes Coletivos do Barreiro",
         "network:short": "TCB",
